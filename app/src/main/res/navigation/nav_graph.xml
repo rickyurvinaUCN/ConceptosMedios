@@ -59,5 +59,17 @@
         <action
             android:id="@+id/action_tableLayoutFragment_to_linearLayoutFragment"
             app:destination="@id/linearLayoutFragment" />
+        <action
+            android:id="@+id/action_tableLayoutFragment_to_frameLayoutFragment"
+            app:destination="@id/frameLayoutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/frameLayoutFragment"
+        android:name="com.example.conceptosmedios.FrameLayoutFragment"
+        android:label="@string/fragment_frame_layout"
+        tools:layout="@layout/fragment_frame_layout" >
+        <action
+            android:id="@+id/action_frameLayoutFragment_to_tableLayoutFragment"
+            app:destination="@id/tableLayoutFragment" />
     </fragment>
 </navigation>

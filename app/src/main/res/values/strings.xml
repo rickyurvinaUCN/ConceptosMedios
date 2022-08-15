@@ -15,4 +15,14 @@
     <string name="info">Información</string>
     <string name="shared_preferences">Shared Preferences</string>
     <string name="writing_files">Escribiendo en Archivos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_sqlite">CRUD SQLite</string>
+    <string name="register">Registrar producto</string>
+    <string name="edit">Editar Producto</string>
+    <string name="delete">Eliminar producto</string>
+    <string name="search_product">Buscar producto</string>
+    <string name="code">Código</string>
+    <string name="description">Descripción</string>
+    <string name="price">Precio</string>
 </resources>

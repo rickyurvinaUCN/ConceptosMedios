@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,6 +63,14 @@ public class SqliteFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 edit();
+            }
+        });
+
+        binding.btnToLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(SqliteFragment.this)
+                        .navigate(R.id.action_sqliteFragment_to_linearLayoutFragment);
             }
         });
 

@@ -25,4 +25,8 @@
     <string name="code">Código</string>
     <string name="description">Descripción</string>
     <string name="price">Precio</string>
+    <string name="fragment_linear_layout">LinearLayout</string>
+    <string name="login">Ingresar</string>
+    <string name="name">Nombre</string>
+    <string name="password">Contraseña</string>
 </resources>

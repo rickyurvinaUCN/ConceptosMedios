@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/FirstFragment">
-
     <fragment
         android:id="@+id/FirstFragment"
         android:name="com.example.conceptosmedios.FirstFragment"
-        android:label="@string/first_fragment_label"
+        android:label="@string/shared_preferences"
         tools:layout="@layout/fragment_first">
 
         <action
@@ -18,7 +17,7 @@
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.example.conceptosmedios.SecondFragment"
-        android:label="@string/second_fragment_label"
+        android:label="@string/writing_files"
         tools:layout="@layout/fragment_second">
 
         <action

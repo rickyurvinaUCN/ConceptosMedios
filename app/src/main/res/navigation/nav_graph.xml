@@ -47,5 +47,17 @@
         <action
             android:id="@+id/action_linearLayoutFragment_to_sqliteFragment"
             app:destination="@id/sqliteFragment" />
+        <action
+            android:id="@+id/action_linearLayoutFragment_to_tableLayoutFragment"
+            app:destination="@id/tableLayoutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tableLayoutFragment"
+        android:name="com.example.conceptosmedios.TableLayoutFragment"
+        android:label="@string/fragment_table_layout"
+        tools:layout="@layout/fragment_table_layout" >
+        <action
+            android:id="@+id/action_tableLayoutFragment_to_linearLayoutFragment"
+            app:destination="@id/linearLayoutFragment" />
     </fragment>
 </navigation>

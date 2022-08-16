@@ -4,6 +4,7 @@ import android.media.Image;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -89,6 +90,13 @@ public class FrameLayoutFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 selected(view);
+            }
+        });
+        binding.btnToSound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(FrameLayoutFragment.this)
+                        .navigate(R.id.action_frameLayoutFragment_to_soundPlayerFragment);
             }
         });
 

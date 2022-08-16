@@ -71,5 +71,17 @@
         <action
             android:id="@+id/action_frameLayoutFragment_to_tableLayoutFragment"
             app:destination="@id/tableLayoutFragment" />
+        <action
+            android:id="@+id/action_frameLayoutFragment_to_soundPlayerFragment"
+            app:destination="@id/soundPlayerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/soundPlayerFragment"
+        android:name="com.example.conceptosmedios.SoundPlayerFragment"
+        android:label="@string/fragment_sound_player"
+        tools:layout="@layout/fragment_sound_player" >
+        <action
+            android:id="@+id/action_soundPlayerFragment_to_frameLayoutFragment"
+            app:destination="@id/frameLayoutFragment" />
     </fragment>
 </navigation>

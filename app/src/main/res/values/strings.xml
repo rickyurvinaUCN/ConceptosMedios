@@ -51,6 +51,9 @@
     <string name="fragment_frame_layout">Frame Layout + ScrollView</string>
     <string name="hide">Ocultar</string>
     <string name="uvas_description">Descripcion de las uvas</string>
+    <string name="sound_pool">AUDIO CON SOUNDPOOL</string>
+    <string name="media_player">AUDIO CON MEDIAPLAYER</string>
+    <string name="fragment_sound_player">REPRODUCCIÓN DE AUDIO</string>
 
 
 </resources>

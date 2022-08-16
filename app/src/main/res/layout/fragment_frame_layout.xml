@@ -5,46 +5,138 @@
     android:id="@+id/frameLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:contentDescription="@string/uvas_description"
     tools:context=".FrameLayoutFragment">
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp"
-        android:layout_marginBottom="27dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout5" />
+        app:layout_constraintTop_toBottomOf="@+id/scr_1" />
 
     <FrameLayout
         android:id="@+id/frameLayout5"
-        android:layout_width="0dp"
+        android:layout_width="97dp"
         android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
         android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/scr_1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/img_v1"
-            android:layout_width="98dp"
-            android:layout_height="81dp"
+            android:layout_width="133dp"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/uvas_description"
             android:src="@android:mipmap/sym_def_app_icon"
             android:visibility="invisible" />
 
         <Button
             android:id="@+id/btn_hide"
-            android:layout_width="wrap_content"
+            android:layout_width="118dp"
             android:layout_height="wrap_content"
             android:text="@string/hide" />
     </FrameLayout>
+
+    <ScrollView
+        android:id="@+id/scr_1"
+        android:layout_width="304dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="277dp"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/img_sandia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#A73017"
+                android:contentDescription="@string/uvas_description"
+                android:src="@drawable/sandia" />
+
+            <ImageButton
+                android:id="@+id/img_pina"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#B0C67B"
+                android:contentDescription="@string/uvas_description"
+                android:src="@drawable/pina" />
+
+            <ImageButton
+                android:id="@+id/img_pera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#4EA456"
+                android:contentDescription="@string/uvas_description"
+                android:src="@drawable/pera" />
+
+            <ImageButton
+                android:id="@+id/img_melon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#4E85A4"
+                android:contentDescription="@string/uvas_description"
+                android:src="@drawable/melon" />
+
+            <ImageButton
+                android:id="@+id/img_manzana"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#8E4EA4"
+                android:contentDescription="@string/uvas_description"
+                android:src="@drawable/manzanas" />
+
+            <ImageButton
+                android:id="@+id/img_mango"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#A44E86"
+                android:contentDescription="@string/uvas_description"
+                android:src="@drawable/mangos"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <ImageButton
+                android:id="@+id/img_fresas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#2E814F"
+                android:contentDescription="@string/uvas_description"
+                android:src="@drawable/fresas"
+                tools:ignore="ImageContrastCheck" />
+
+            <ImageButton
+                android:id="@+id/img_cerezas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/design_default_color_secondary_variant"
+                android:contentDescription="@string/uvas_description"
+                android:src="@drawable/cerezas" />
+
+            <ImageButton
+                android:id="@+id/img_banana"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00FEE3"
+                android:contentDescription="@string/uvas_description"
+                android:src="@drawable/bananas" />
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

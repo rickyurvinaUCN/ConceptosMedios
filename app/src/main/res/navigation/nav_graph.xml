@@ -36,19 +36,7 @@
             android:id="@+id/action_sqliteFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
         <action
-            android:id="@+id/action_sqliteFragment_to_linearLayoutFragment"
-            app:destination="@id/linearLayoutFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/linearLayoutFragment"
-        android:name="com.example.conceptosmedios.LinearLayoutFragment"
-        android:label="@string/fragment_linear_layout"
-        tools:layout="@layout/fragment_linear_layout" >
-        <action
-            android:id="@+id/action_linearLayoutFragment_to_sqliteFragment"
-            app:destination="@id/sqliteFragment" />
-        <action
-            android:id="@+id/action_linearLayoutFragment_to_tableLayoutFragment"
+            android:id="@+id/action_sqliteFragment_to_tableLayoutFragment"
             app:destination="@id/tableLayoutFragment" />
     </fragment>
     <fragment
@@ -56,9 +44,6 @@
         android:name="com.example.conceptosmedios.TableLayoutFragment"
         android:label="@string/fragment_table_layout"
         tools:layout="@layout/fragment_table_layout" >
-        <action
-            android:id="@+id/action_tableLayoutFragment_to_linearLayoutFragment"
-            app:destination="@id/linearLayoutFragment" />
         <action
             android:id="@+id/action_tableLayoutFragment_to_frameLayoutFragment"
             app:destination="@id/frameLayoutFragment" />

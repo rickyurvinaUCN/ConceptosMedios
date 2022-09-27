@@ -40,24 +40,7 @@ public class SecondFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         txt_file = (EditText) binding.txtFile;
-        String files[] = getActivity().fileList();
-        if (fileExist(files, fileName)) {
-            try {
-                InputStreamReader file = new InputStreamReader(getActivity().openFileInput(fileName));
-                BufferedReader br = new BufferedReader(file);
-                String line = br.readLine();
-                String bitacoraCompleta = "";
-                while (line != null) {
-                    bitacoraCompleta = bitacoraCompleta + line + "\n";
-                    line = br.readLine();
-                }
-                br.close();
-                file.close();
-                txt_file.setText(bitacoraCompleta);
-            } catch (IOException e) {
-                Toast.makeText(this.getActivity(), "Error al obtener el archivo", Toast.LENGTH_SHORT).show();
-            }
-        }
+
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,7 +52,7 @@ public class SecondFragment extends Fragment {
         binding.btnSaveFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                save();
+
             }
         });
 
@@ -80,29 +63,6 @@ public class SecondFragment extends Fragment {
                         .navigate(R.id.action_SecondFragment_to_sqliteFragment);
             }
         });
-    }
-
-    //metodo para probar si el archivo existe en los ficheros
-    private boolean fileExist(String files[], String fileName) {
-        for (int i = 0; i < files.length; i++)
-            if (fileName.equals(files[i]))
-                return true;
-        return false;
-    }
-
-    //metodo para guardar el fichero con el multilinetext
-    public void save() {
-        try {
-            OutputStreamWriter file = new OutputStreamWriter(getActivity().openFileOutput(fileName, Activity.MODE_PRIVATE));
-            file.write(txt_file.getText().toString());
-            file.flush();
-            file.close();
-        } catch (IOException e) {
-            Toast.makeText(this.getActivity(), "Error al obtener el archivo", Toast.LENGTH_SHORT).show();
-        }
-        Toast.makeText(this.getActivity(), "Guardado exitosamente", Toast.LENGTH_SHORT).show();
-
-        getActivity().finish();
     }
 
     @Override

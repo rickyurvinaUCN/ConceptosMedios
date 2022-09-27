@@ -11,101 +11,106 @@
         android:id="@+id/btn_to_linear_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
-        android:layout_marginRight="36dp"
-        android:layout_marginBottom="37dp"
         android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.419"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.904" />
 
     <Button
         android:id="@+id/btn_register"
         android:layout_width="208dp"
         android:layout_height="45dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="35dp"
         android:text="@string/register"
         app:backgroundTint="@color/cardview_dark_background"
-        app:layout_constraintStart_toStartOf="@+id/txt_price"
-        app:layout_constraintTop_toBottomOf="@+id/txt_price" />
-
-    <Button
-        android:id="@+id/btn_searchP"
-        android:layout_width="208dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="96dp"
-        android:text="@string/search_product"
-        app:backgroundTint="@color/cardview_dark_background"
-        app:layout_constraintStart_toStartOf="@+id/txt_price"
-        app:layout_constraintTop_toBottomOf="@+id/txt_price" />
-
-    <Button
-        android:id="@+id/btn_edit"
-        android:layout_width="208dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="152dp"
-        android:text="@string/edit"
-        app:backgroundTint="@color/cardview_dark_background"
-        app:layout_constraintStart_toStartOf="@+id/txt_price"
-        app:layout_constraintTop_toBottomOf="@+id/txt_price" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.432" />
 
     <Button
         android:id="@+id/btn_delete"
         android:layout_width="208dp"
         android:layout_height="45dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="208dp"
         android:text="@string/delete"
         app:backgroundTint="@color/cardview_dark_background"
-        app:layout_constraintStart_toStartOf="@+id/txt_price"
-        app:layout_constraintTop_toBottomOf="@+id/txt_price" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.72" />
+
+    <Button
+        android:id="@+id/btn_edit"
+        android:layout_width="208dp"
+        android:layout_height="45dp"
+        android:text="@string/edit"
+        app:backgroundTint="@color/cardview_dark_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.618" />
+
+    <Button
+        android:id="@+id/btn_searchP"
+        android:layout_width="208dp"
+        android:layout_height="45dp"
+        android:text="@string/search_product"
+        app:backgroundTint="@color/cardview_dark_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.523" />
 
     <EditText
-        android:id="@+id/txt_code"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginTop="57dp"
-        android:layout_marginBottom="14dp"
+        android:id="@+id/txt_description"
+        android:layout_width="205dp"
+        android:layout_height="77dp"
         android:ems="10"
-        android:hint="@string/code"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/txt_description"
+        android:gravity="start|top"
+        android:hint="@string/description"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.166" />
 
     <EditText
         android:id="@+id/txt_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="74dp"
-        android:layout_marginLeft="74dp"
-        android:layout_marginBottom="380dp"
         android:ems="10"
         android:hint="@string/price"
         android:inputType="numberDecimal"
-        app:layout_constraintBottom_toTopOf="@+id/btn_to_linear_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.442"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_description" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.309" />
 
     <EditText
-        android:id="@+id/txt_description"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="18dp"
+        android:id="@+id/txt_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
-        android:gravity="start|top"
-        android:hint="@string/description"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/txt_price"
-        app:layout_constraintEnd_toEndOf="@+id/txt_price"
-        app:layout_constraintStart_toStartOf="@+id/txt_code"
-        app:layout_constraintTop_toBottomOf="@+id/txt_code" />
+        android:hint="@string/code"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.068" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

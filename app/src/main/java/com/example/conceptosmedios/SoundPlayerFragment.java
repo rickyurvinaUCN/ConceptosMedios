@@ -36,49 +36,19 @@ public class SoundPlayerFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentSoundPlayerBinding.inflate(inflater, container, false);
 
-//        binding.btnShortSound.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                shortSound();
-//            }
-//        });
-
         binding.btnSoundLarge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                largeSound();
             }
         });
-
-        sp = new SoundPool(5, AudioManager.STREAM_MUSIC,0);
-        sound = R.raw.sound_short;
-        sp.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
-            @Override
-            public void onLoadComplete(SoundPool soundPool, int i, int i1) {
-                loaded = true;
-            }
-        });
-        soundId = sp.load(getActivity(), sound, 1);
 
         binding.btnShortSound.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(loaded) {
-                    sp.play(soundId, 1, 1, 0, 0, 1);
-                }
+
             }
         });
         return binding.getRoot();
-    }
-
-    public void shortSound() {
-
-        sp.play(sound, 1, 1, 1, 0, 0);
-    }
-
-    public void largeSound() {
-        MediaPlayer mp=  MediaPlayer.create(this.getActivity(),R.raw.sound_long);
-        mp.start();
     }
 
 }

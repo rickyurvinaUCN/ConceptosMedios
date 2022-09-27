@@ -9,26 +9,24 @@
 
     <Button
         android:id="@+id/btn_short_sound"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="145dp"
-        android:layout_marginBottom="41dp"
+        android:layout_width="291dp"
+        android:layout_height="35dp"
         android:text="@string/sound_pool"
-        app:layout_constraintBottom_toTopOf="@+id/btn_sound_large"
-        app:layout_constraintEnd_toEndOf="@+id/btn_sound_large"
-        app:layout_constraintStart_toStartOf="@+id/btn_sound_large"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.231" />
 
     <Button
         android:id="@+id/btn_sound_large"
         android:layout_width="291dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="49dp"
-        android:layout_marginRight="49dp"
-        android:layout_marginBottom="384dp"
+        android:layout_height="35dp"
         android:text="@string/media_player"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_short_sound" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.375" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

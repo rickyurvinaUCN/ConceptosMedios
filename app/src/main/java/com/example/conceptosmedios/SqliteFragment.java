@@ -41,28 +41,24 @@ public class SqliteFragment extends Fragment {
         binding.btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                save();
             }
         });
 
         binding.btnSearchP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                search();
             }
         });
 
         binding.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                delete();
             }
         });
 
         binding.btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                edit();
             }
         });
 
@@ -70,100 +66,10 @@ public class SqliteFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(SqliteFragment.this)
-                        .navigate(R.id.action_sqliteFragment_to_linearLayoutFragment);
+                        .navigate(R.id.action_sqliteFragment_to_tableLayoutFragment);
             }
         });
 
-    }
-
-    //Metodo para guardar los productos
-    public void save() {
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this.getActivity(), "administration", null, 1);
-        SQLiteDatabase database = admin.getWritableDatabase();
-
-        String code = txt_code.getText().toString();
-        String description = txt_description.getText().toString();
-        String price = txt_price.getText().toString();
-
-        if (!code.isEmpty() && !description.isEmpty() && !price.isEmpty()) {
-            ContentValues register = new ContentValues();
-            register.put("code", code);
-            register.put("description", description);
-            register.put("price", price);
-            database.insert("products", null, register);
-            database.close();
-            cleanForm();
-            Toast.makeText(this.getActivity(), "Registro exitoso", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this.getActivity(), "Completar todos los datos", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    //Metodo para buscar productos
-    public void search() {
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this.getActivity(), "administration", null, 1);
-        SQLiteDatabase database = admin.getWritableDatabase();
-        admin.getWritableDatabase();
-        String code = txt_code.getText().toString();
-        if (!code.isEmpty()) {
-            Cursor row = database.rawQuery
-                    ("select description, price  from products where code =" + code, null);
-            if (row.moveToFirst()) {
-                txt_description.setText(row.getString(0));
-                txt_price.setText(row.getString(1));
-                database.close();
-            } else {
-                Toast.makeText(this.getActivity(), "No se encontraron registros", Toast.LENGTH_SHORT).show();
-            }
-        } else {
-            Toast.makeText(this.getActivity(), "Ingresar código", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    //metodo para eliminar un producto
-    public void delete() {
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this.getActivity(), "administration", null, 1);
-        SQLiteDatabase database = admin.getWritableDatabase();
-        admin.getWritableDatabase();
-        String code = txt_code.getText().toString();
-        if (!code.isEmpty()) {
-            int count = database.delete("products", "code=" + code, null);
-            if (count == 1) {
-                database.close();
-                cleanForm();
-                Toast.makeText(this.getActivity(), "Eliminado exitosamente", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this.getActivity(), "El producto no existe", Toast.LENGTH_SHORT).show();
-            }
-        } else {
-            Toast.makeText(this.getActivity(), "Ingresar código", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void edit() {
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this.getActivity(), "administration", null, 1);
-        SQLiteDatabase database = admin.getWritableDatabase();
-
-        String code = txt_code.getText().toString();
-        String description = txt_description.getText().toString();
-        String price = txt_price.getText().toString();
-
-        if (!code.isEmpty() && !description.isEmpty() && !price.isEmpty()) {
-            ContentValues register = new ContentValues();
-            register.put("code", code);
-            register.put("description", description);
-            register.put("price", price);
-            int cant = database.update("products", register, "code=" + code, null);
-            if (cant == 1) {
-                database.close();
-                cleanForm();
-                Toast.makeText(this.getActivity(), "Actualizado exitosamente", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this.getActivity(), "Error al actualizar", Toast.LENGTH_SHORT).show();
-            }
-        } else {
-            Toast.makeText(this.getActivity(), "Ingresar código", Toast.LENGTH_SHORT).show();
-        }
     }
 
     public void cleanForm() {

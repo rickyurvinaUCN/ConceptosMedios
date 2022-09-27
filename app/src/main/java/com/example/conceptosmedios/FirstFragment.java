@@ -38,6 +38,10 @@ public class FirstFragment extends Fragment {
         txt_name = (EditText) binding.txtName;
         txt_info = (EditText) binding.txtInfo;
 
+        SharedPreferences pref = getActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
+        String email = pref.getString("email", "empty");
+        txt_email.setText(email);
+
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,18 +52,51 @@ public class FirstFragment extends Fragment {
         binding.btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                save();
             }
         });
         binding.btnSaveInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                saveInfo();
             }
         });
         binding.btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                search();
             }
         });
+    }
+
+    public void save() {
+        SharedPreferences pref = getActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edt = pref.edit();
+        edt.putString("email", txt_email.getText().toString());
+        edt.commit();
+        getActivity().finish();
+    }
+
+    public void saveInfo() {
+        String name = txt_name.getText().toString();
+        String info = txt_info.getText().toString();
+        SharedPreferences preferences = getActivity().getSharedPreferences("agenda", Context.MODE_PRIVATE);
+        SharedPreferences.Editor obj_editor = preferences.edit();
+        obj_editor.putString(name, info);
+        obj_editor.commit();
+        Toast.makeText(this.getActivity(), "El contacto ha sido guardado", Toast.LENGTH_SHORT).show();
+    }
+
+    public void search() {
+        String name = txt_name.getText().toString();
+        SharedPreferences preferences = getActivity().getSharedPreferences("agenda", Context.MODE_PRIVATE);
+        String info = preferences.getString(name, "");
+
+        if (info.length() == 0) {
+            Toast.makeText(getActivity(), "No se encontro ningun registro", Toast.LENGTH_LONG).show();
+        } else {
+            txt_info.setText(info);
+        }
     }
 
     @Override

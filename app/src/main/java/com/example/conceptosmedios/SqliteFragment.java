@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import com.example.conceptosmedios.databinding.FragmentSqliteBinding;
 
+import java.sql.SQLInput;
+
 
 public class SqliteFragment extends Fragment {
 
@@ -41,6 +43,7 @@ public class SqliteFragment extends Fragment {
         binding.btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                save();
             }
         });
 
@@ -70,6 +73,27 @@ public class SqliteFragment extends Fragment {
             }
         });
 
+    }
+
+    public void save(){
+        AdminSQLiteOpenHelper admin= new AdminSQLiteOpenHelper(this.getActivity(),"administration",null,1);
+        SQLiteDatabase database= admin.getWritableDatabase();
+
+        String code= txt_code.getText().toString();
+        String description = txt_description.getText().toString();
+        String price = txt_price.getText().toString();
+        if (!code.isEmpty() && !description.isEmpty() && !price.isEmpty()) {
+            ContentValues register= new ContentValues();
+            register.put("code",code);
+            register.put("description",description);
+            register.put("price",price);
+            database.insert("products",null,register);
+            database.close();
+            cleanForm();
+            Toast.makeText(this.getActivity(),"Almacenado Exitosamente", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this.getActivity(),"Completar los datos", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void cleanForm() {
